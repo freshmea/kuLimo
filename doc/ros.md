@@ -56,3 +56,31 @@
 - 8교시
   - launch/message.launch 작성 (ros1 launch)
   - ros1 launch 로 hello.py 실행
+
+---
+
+## 2025-04-26
+
+---
+
+- 1교시
+  - 복습
+  - python setup.py 추가
+  - ros1 mtpub 작성
+- 2교시
+  - ros1 mtsub 작성
+- 3교시
+  - ros1 launch 작성
+- 4교시
+  - [과제] 노드 5개 연결 통합 과제
+- 5교시
+  - 과제 풀이 - mtpub, mtsub, mpub, msub, msub2, launch
+- 6교시
+  - ros1 service 설명
+  - ros1 simpleServiceServer 작성
+  - ros1 simpleServiceServer 수정 - thread 코드 추가
+- 7교시
+  - ros1 simpleServiceClient 작성
+  - ros1 asyncio 로 Serviceclient2 작성
+- 8교시
+  - ros2 service server 작성
