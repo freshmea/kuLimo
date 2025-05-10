@@ -1,4 +1,7 @@
 # ros2 run hello_ros2 simple_parameter --ros-args -p use_sim_time:=True
+# ros2 run hello_ros2 simple_parameter
+# ros2 param set simple_parameter para1 1000
+# ros2 param get simple_parameter para1
 
 import rclpy
 from rcl_interfaces.msg import SetParametersResult
