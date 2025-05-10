@@ -11,3 +11,8 @@
           history: keep_last
           reliability: reliable
     use_sim_time: false
+
+/move_turtle:
+  ros__parameters:
+    vel: 1.0
+    angle_vel: 3.0

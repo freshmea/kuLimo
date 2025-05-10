@@ -30,6 +30,9 @@ def generate_launch_description():
             Node(
                 package="turtlesim", executable="turtlesim_node", parameters=[param_dir]
             ),
-            Node(package="hello_ros2", executable="move_turtle"),
+            Node(
+                package="hello_ros2", executable="move_turtle", parameters=[param_dir]
+            ),
+            Node(package="hello_ros2", executable="change_color_client"),
         ]
     )

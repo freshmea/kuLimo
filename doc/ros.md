@@ -84,3 +84,31 @@
   - ros1 asyncio 로 Serviceclient2 작성
 - 8교시
   - ros2 service server 작성
+
+---
+
+## 2025-05-10
+
+---
+
+- 1교시
+  - 복습
+  - ros2 service server 테스트
+- 2교시
+  - ros2 service server2 비동기 서버 작성
+- 3교시
+  - ros2 service client 작성
+- 4교시
+  - ros2 파라미터 설명
+- 5교시
+  - ros2 param 명령어 - list, get, set, dump
+  - simple_parameter.py 작성
+  - launch 파일에 yaml 파일 사용(param dump turtlesim.yaml)
+- 6교시
+  - 터틀심 파라미터 실습
+  - change_color_client.py 과제
+- 7교시
+  - ros1 parameter
+- 8교시
+  - ros1 parameter simple_parameter.py 작성
+  - launch 파일 작성
