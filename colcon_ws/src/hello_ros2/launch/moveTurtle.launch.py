@@ -1,3 +1,9 @@
+# ros2 param list
+# ros2 param dump
+# ros2 param dump turtlesim
+# ros2 param dump turtlesim >> turtlesim.yaml
+# ros2 run turtlesim turtlesim_node --ros-args --params-file turtlesim.yaml
+# ros2 launch hello_ros2 moveTurtle.launch.py
 import os
 
 from ament_index_python.packages import get_package_share_directory
