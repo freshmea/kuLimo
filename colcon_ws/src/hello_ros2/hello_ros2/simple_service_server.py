@@ -25,6 +25,7 @@ class Service_server(Node):
             response.success = False
             response.message = f"{self.cnt}번째 요청 {self.bool} 변경 실패"
         time.sleep(5)
+        self.cnt += 1
         return response
 
 
