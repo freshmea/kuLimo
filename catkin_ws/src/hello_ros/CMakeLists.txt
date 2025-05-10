@@ -27,6 +27,7 @@ catkin_install_python(PROGRAMS
   scripts/simpleServiceServer
   scripts/simpleServiceClient
   scripts/simpleServiceClient2
+  scripts/simpleParameter
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
