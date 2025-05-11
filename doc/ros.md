@@ -108,7 +108,10 @@
   - 터틀심 파라미터 실습
   - change_color_client.py 과제
 - 7교시
-  - ros1 parameter
+  - ros1 parameter 설명
+  - turtlesim_node
 - 8교시
   - ros1 parameter simple_parameter.py 작성
+  - yamle 파일 dump
   - launch 파일 작성
+  - ros1 사용자 정의 interface
