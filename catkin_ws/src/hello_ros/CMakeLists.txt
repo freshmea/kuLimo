@@ -26,7 +26,15 @@ add_message_files(
   MyTopic.msg
 )
 
-generate_messages()
+add_service_files(
+  FILES
+  AddTwoInts.srv
+)
+
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 
 
 catkin_package()
@@ -47,6 +55,8 @@ catkin_install_python(PROGRAMS
   scripts/simpleParameter2
   scripts/myTopicPub
   scripts/myTopicSub
+  scripts/addServer
+  scripts/addClient
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
