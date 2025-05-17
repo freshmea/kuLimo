@@ -12,6 +12,8 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   message_generation
+  actionlib
+  actionlib_msgs
 )
 
 catkin_python_setup()
@@ -31,9 +33,15 @@ add_service_files(
   AddTwoInts.srv
 )
 
+add_action_files(
+  FILES
+  TimeWait.action
+)
+
 generate_messages(
   DEPENDENCIES
   std_msgs
+  actionlib_msgs
 )
 
 
