@@ -2,6 +2,31 @@
 
 ---
 
+```bash
+# 실행 명령어
+   70  rosrun hello_ros addServer
+   71  cm
+   72  clear
+   73  rosrun hello_ros timeActionServer
+   74  rosrun hello_ros myTopicSub
+   75  clear
+   76  rosrun hello_ros addClient
+   77  clear
+   78  rosrun hello_ros addClient
+   80  clear
+   81  cm
+   82  rosrun hello_ros timeActionClient
+   83  cm
+   84  rosrun hello_ros timeActionClient
+   85  cm
+   86  sb
+   87  rosrun hello_ros timeActionClient2
+ 1855  ros2 run hello_ros2 my_topic_pub
+ 1856  ros2 run hello_ros2 add_server
+
+
+```
+
 - limo 수업
   - 1조: 박인규, 정명재, 구찬형, 이현성, 박윤국
   - 2조: 박정우, 차경민, 김학민, 장대진, 이경용
