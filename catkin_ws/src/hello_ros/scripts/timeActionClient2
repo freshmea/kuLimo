@@ -1,3 +1,6 @@
+# rosrun hello_ros timeActionServer
+# rosrun hello_ros timeActionClient2
+
 import actionlib
 import rospy
 from hello_ros.msg import TimeWaitAction, TimeWaitFeedback, TimeWaitGoal, TimeWaitResult
