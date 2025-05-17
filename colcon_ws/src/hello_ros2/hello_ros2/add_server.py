@@ -22,14 +22,13 @@ class Service_server(Node):
         self, request: AddTwoInts.Request, response: AddTwoInts.Response
     ):
         # 서버의 작동 알고리즘...
-        self.get_logger().info(f"{request.header.stamp}번째 요청 처리")
+        self.get_logger().info(f"{request.header.stamp} 시간")
         self.get_logger().info(f"a : {request.a}")
         self.get_logger().info(f"b : {request.b}")
         response.result = request.a + request.b
         response.success = True
         response.message = "a 와 b 의 값을 더해서 반환 했다!"
         time.sleep(5)
-        self.cnt += 1
         return response
 
 
