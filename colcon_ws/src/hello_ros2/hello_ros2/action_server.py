@@ -4,6 +4,7 @@ import time
 
 import rclpy
 from rclpy.action import ActionServer
+from rclpy.action.server import ServerGoalHandle
 from rclpy.callback_groups import ReentrantCallbackGroup
 from rclpy.executors import MultiThreadedExecutor
 from rclpy.node import Node
@@ -19,7 +20,7 @@ class Action_server(Node):
             self, Fibonacci, "fibonacci", execute_callback=self.execute_callback
         )
 
-    def execute_callback(self, goal_handle):
+    def execute_callback(self, goal_handle: ServerGoalHandle):
         # goal 을 받았을 때...
         request: Fibonacci.Goal = goal_handle.request
         self.get_logger().info(f"{request.step}")
@@ -36,6 +37,7 @@ class Action_server(Node):
         # result 보내기
         print(type(goal_handle))
         goal_handle.succeed()  # 완료 status 보내기
+        # goal_handle.abort() # aborted 상태로 보내기
         result.seq = feedback.temp_seq
         return result  # action 종료
 
