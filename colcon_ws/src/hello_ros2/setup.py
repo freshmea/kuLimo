@@ -41,6 +41,7 @@ setup(
             "change_color_client = hello_ros2.change_color_client:main",
             "my_topic_pub = hello_ros2.my_topic_pub:main",
             "add_server = hello_ros2.add_server:main",
+            "action_server = hello_ros2.action_server:main",
         ],
     },
 )
