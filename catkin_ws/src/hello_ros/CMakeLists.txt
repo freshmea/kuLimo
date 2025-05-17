@@ -65,6 +65,7 @@ catkin_install_python(PROGRAMS
   scripts/myTopicSub
   scripts/addServer
   scripts/addClient
+  scripts/timeActionServer
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
