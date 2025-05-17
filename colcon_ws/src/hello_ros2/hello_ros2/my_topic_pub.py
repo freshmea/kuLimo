@@ -1,4 +1,5 @@
-# /turtle1/cmd_vel [geometry_msgs/msg/Twist]
+# ros2 run hello_ros2 my_topic_pub
+# ros2 topic echo /message
 import rclpy
 from rclpy.node import Node
 from user_interface.msg import MyTopic
