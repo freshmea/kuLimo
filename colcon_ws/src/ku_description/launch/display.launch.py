@@ -14,8 +14,6 @@ def generate_launch_description():
     return LaunchDescription(
         [
             model,
-            Node(package="hello_ros2", executable="simple_pub"),
-            Node(package="hello_ros2", executable="simple_sub"),
             IncludeLaunchDescription(
                 PathJoinSubstitution(
                     [FindPackageShare("urdf_launch"), "launch", "display.launch.py"]
