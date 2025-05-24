@@ -52,3 +52,16 @@ chmod 700 /run/user/$(id -u)
   - ROS1, ROS2 패키지 만들기
   - ROS1, ROS2 패키지 사용하기
 - [과정 진행 사항](doc/ros.md)
+
+---
+
+## 로봇 시뮬레이션 SLAM NAV2 수업
+
+---
+
+- 수업 목표
+  - 로봇 시뮬레이션 환경 구축
+  - urdf 파일을 이용한 로봇 모델링
+  - xacro 파일을 이용한 로봇 모델링
+  - SLAM, NAV2 패키지 사용하기
+- [과정 진행 사항](doc/simulation.md)
