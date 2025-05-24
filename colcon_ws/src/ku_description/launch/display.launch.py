@@ -21,7 +21,7 @@ def generate_launch_description():
                     [FindPackageShare("urdf_launch"), "launch", "display.launch.py"]
                 ),
                 launch_arguments={
-                    "urdf_packge": "ku_description",
+                    "urdf_package": "ku_description",
                     "urdf_package_path": LaunchConfiguration("model"),
                 }.items(),
             ),
