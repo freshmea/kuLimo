@@ -1,5 +1,6 @@
 # /cmd_vel [geometry_msgs/msg/Twist]
 # ros2 launch limo_description gazebo_models_diff.launch.py
+# ros2 run hello_ros2 move_limo
 import rclpy
 from geometry_msgs.msg import Twist
 from rcl_interfaces.msg import SetParametersResult
