@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 # rosrun hello_ros timeActionServer
 # rosrun hello_ros timeActionClient2
 

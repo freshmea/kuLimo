@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import actionlib
 import rospy
 from hello_ros.msg import TimeWaitAction, TimeWaitFeedback, TimeWaitGoal, TimeWaitResult
