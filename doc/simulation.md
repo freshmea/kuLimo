@@ -19,6 +19,7 @@
 - 3교시
   - urdf 작성(link, visual, joint tag)
     - visual.urdf 작성
+  - urdf 체크 (check_urdf, rqt(tf-tree)) 확인
 - 4교시
   - urdf 작성(joint, collision, inertial tag)
     - physics.urdf 작성
