@@ -37,6 +37,7 @@ alias killgazebo='pkill -9 gzserver; pkill -9 gzclient; pkill -9 gzweb; pkill -9
 # ros2 run turtlebot3_teleop teleop_keyboard
 # sudo apt install ros-humble-cartographer
 # sudo apt install ros-humble-cartographer-ros
+# git clone -b humble https://github.com/ROBOTIS-GIT/DynamixelSDK.git
 # git clone -b humble https://github.com/ROBOTIS-GIT/turtlebot3.git
 
 
