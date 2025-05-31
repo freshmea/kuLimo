@@ -35,6 +35,9 @@ alias killgazebo='pkill -9 gzserver; pkill -9 gzclient; pkill -9 gzweb; pkill -9
 # sudo apt install ros-humble-rqt-tf-tree
 # ros2 run rqt_tf_tree rqt_tf_tree --force-discover
 # ros2 run turtlebot3_teleop teleop_keyboard
+# sudo apt install ros-humble-cartographer
+# sudo apt install ros-humble-cartographer-ros
+
 
 ```
 
