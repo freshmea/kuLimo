@@ -26,6 +26,12 @@ alias killgazebo='pkill -9 gzserver; pkill -9 gzclient; pkill -9 gzweb; pkill -9
 # cd ~/kuLimo/colcon_ws/src
 # git clone https://github.com/agilexrobotics/limo_ros2.git
 # git clone -b humble https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+# cd ~/kuLimo/colcon_ws/src/limo_ros2/limo_car
+# mkdir log
+# mkdir worlds
+# mkdir src
+# cb
+# ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 ```
 
 ```bash
