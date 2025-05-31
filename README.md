@@ -20,6 +20,12 @@ export TURTLEBOT3_MODEL=burger
 source /usr/share/gazebo/setup.bash
 export SVGA_VGPU10=0
 alias killgazebo='pkill -9 gzserver; pkill -9 gzclient; pkill -9 gzweb; pkill -9 gzbridge'
+# sudo apt install ros-humble-gazebo-*
+# sudo apt install ros-humble-turtlebot3-msgs
+# sudo apt install ros-humble-turtlebot3-teleop
+# cd ~/kuLimo/colcon_ws/src
+# git clone https://github.com/agilexrobotics/limo_ros2.git
+# git clone -b humble https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
 ```
 
 ```bash
