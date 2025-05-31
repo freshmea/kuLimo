@@ -40,7 +40,12 @@ alias killgazebo='pkill -9 gzserver; pkill -9 gzclient; pkill -9 gzweb; pkill -9
 # git clone -b humble https://github.com/ROBOTIS-GIT/DynamixelSDK.git
 # git clone -b humble https://github.com/ROBOTIS-GIT/turtlebot3.git
 
-
+# 카토그래퍼 실행
+# 1. gazebo 실행 - ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+# 2. 터틀봇3 텔레옵 - ros2 run turtlebot3_teleop teleop_keyboard
+# 3. 카토그래퍼 실행 - ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=true
+# 4. rqt 실행 - rqt -> node graph, tf tree.
+# 운용 -> 텔레옵 움직여서 지도가 그려지는것 rviz2 창에서 확인!.
 
 ```
 
