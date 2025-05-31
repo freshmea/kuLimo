@@ -15,6 +15,14 @@
 [링크](https://drive.google.com/file/d/1We4ILpw1NTzpspkflSpvdZikvyApTxn0/view?usp=sharing)
 
 ```bash
+# 필요한 환경 변수
+export TURTLEBOT3_MODEL=burger
+source /usr/share/gazebo/setup.bash
+export SVGA_VGPU10=0
+alias killgazebo='pkill -9 gzserver; pkill -9 gzclient; pkill -9 gzweb; pkill -9 gzbridge'
+```
+
+```bash
 # 31번 라인
 if [[ "$TERM" == *color* ]]; then
     color_prompt=yes

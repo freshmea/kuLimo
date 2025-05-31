@@ -18,11 +18,11 @@ def generate_launch_description():
     # Constants for paths to different files and folders
     gazebo_models_path = "models"
     package_name = "limo_description"
-    world_package_name = "turtlebot3_gazebo"
+    world_package_name = "turtlebot3_gazebo"  # 이부분 변경
     robot_name_in_model = "limo_description"
     rviz_config_file_path = "rviz/urdf.rviz"
     urdf_file_path = "urdf/limo_four_diff.xacro"
-    world_file_path = "worlds/turtlebot3_world.world"
+    world_file_path = "worlds/turtlebot3_world.world"  # 이부분 변경
 
     # Pose where we want to spawn the robot
     spawn_x_val = "0.0"
@@ -37,10 +37,10 @@ def generate_launch_description():
     pkg_share = FindPackageShare(package=package_name).find(package_name)
     world_pkg_share = FindPackageShare(package=world_package_name).find(
         world_package_name
-    )
+    )  # 이부분 변경
     default_urdf_model_path = os.path.join(pkg_share, urdf_file_path)
     default_rviz_config_path = os.path.join(pkg_share, rviz_config_file_path)
-    world_path = os.path.join(world_pkg_share, world_file_path)
+    world_path = os.path.join(world_pkg_share, world_file_path)  # 이부분 변경
     gazebo_models_path = os.path.join(pkg_share, gazebo_models_path)
     os.environ["GAZEBO_MODEL_PATH"] = gazebo_models_path
 
