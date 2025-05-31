@@ -38,3 +38,30 @@
     - world 파일과 spawn.py로 로봇 배치
 - 8교시
   - world 파일에 모델 추가(stop traffic sign 모델 추가)
+
+---
+
+## 2025-05-31
+
+---
+
+- 1교시
+  - 복습
+  - 슬램 개념 학습
+- 2교시
+  - gazebo 시뮬레이션 설정 - 복습
+    - turtlebot3_simulation 패키지 설치
+    - limo_ros2 패키지 설치
+    - gazebo 설치
+- 3교시
+  - turtlebot3 패키지 설치
+- 4교시
+  - ㅁ
+- 5교시
+  - a
+- 6교시
+  - a
+- 7교시
+  - a
+- 8교시
+  - a
