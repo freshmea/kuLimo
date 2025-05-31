@@ -10,7 +10,7 @@ from rclpy.node import Node
 class PublishMap(Node):
     def __init__(self):
         super().__init__("publish_map")  # node name
-        self.create_timer(0.5, self.pub_cb)
+        self.create_timer(0.001, self.pub_cb)
         self.pub = self.create_publisher(OccupancyGrid, "/map", 100)
         self.msg = OccupancyGrid()
         self.msg.header.frame_id = "odom"
@@ -28,8 +28,25 @@ class PublishMap(Node):
         self.msg.data = [100 for _ in range(10_000)]
         self.msg.data.extend([0 for _ in range(10_000)])
 
+        self.count = 0
+        self.row = 0
+
     def pub_cb(self):
         self.msg.header.stamp = self.get_clock().now().to_msg()
+
+        index = self.count + (self.msg.info.width * self.row)
+        if self.msg.data[index] == -1:
+            self.msg.data[index] = 100
+        else:
+            self.msg.data[index] = -1
+
+        self.count += 1
+        if self.count >= self.msg.info.width:
+            self.count = 0
+            self.row += 1
+        if self.row >= self.msg.info.height:
+            self.row = 0
+
         self.pub.publish(self.msg)
 
 
