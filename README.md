@@ -39,6 +39,8 @@ alias killgazebo='pkill -9 gzserver; pkill -9 gzclient; pkill -9 gzweb; pkill -9
 # sudo apt install ros-humble-cartographer-ros
 # git clone -b humble https://github.com/ROBOTIS-GIT/DynamixelSDK.git
 # git clone -b humble https://github.com/ROBOTIS-GIT/turtlebot3.git
+# sudo apt install ros-humble-navigation2
+# sudo apt install ros-humble-nav2-bringup
 
 # 카토그래퍼 실행
 # 1. gazebo 실행 - ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
