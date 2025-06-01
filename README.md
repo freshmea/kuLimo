@@ -14,43 +14,6 @@
 - vscode deb 파일
 [링크](https://drive.google.com/file/d/1We4ILpw1NTzpspkflSpvdZikvyApTxn0/view?usp=sharing)
 
-```bash
-# 필요한 환경 변수
-export TURTLEBOT3_MODEL=burger
-source /usr/share/gazebo/setup.bash
-export SVGA_VGPU10=0
-alias killgazebo='pkill -9 gzserver; pkill -9 gzclient; pkill -9 gzweb; pkill -9 gzbridge'
-# sudo apt install ros-humble-gazebo-*
-# sudo apt install ros-humble-turtlebot3-msgs
-# sudo apt install ros-humble-turtlebot3-teleop
-# cd ~/kuLimo/colcon_ws/src
-# git clone https://github.com/agilexrobotics/limo_ros2.git
-# git clone -b humble https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
-# cd ~/kuLimo/colcon_ws/src/limo_ros2/limo_car
-# mkdir log
-# mkdir worlds
-# mkdir src
-# cb
-# ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
-# sudo apt install ros-humble-rqt-tf-tree
-# ros2 run rqt_tf_tree rqt_tf_tree --force-discover
-# ros2 run turtlebot3_teleop teleop_keyboard
-# sudo apt install ros-humble-cartographer
-# sudo apt install ros-humble-cartographer-ros
-# git clone -b humble https://github.com/ROBOTIS-GIT/DynamixelSDK.git
-# git clone -b humble https://github.com/ROBOTIS-GIT/turtlebot3.git
-# sudo apt install ros-humble-navigation2
-# sudo apt install ros-humble-nav2-bringup
-# ros2 run nav2_map_server map_saver_cli -f map
-
-# 카토그래퍼 실행
-# 1. gazebo 실행 - ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
-# 2. 터틀봇3 텔레옵 - ros2 run turtlebot3_teleop teleop_keyboard
-# 3. 카토그래퍼 실행 - ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=true
-# 4. rqt 실행 - rqt -> node graph, tf tree.
-# 운용 -> 텔레옵 움직여서 지도가 그려지는것 rviz2 창에서 확인!.
-
-```
 
 ```bash
 # 31번 라인
