@@ -5,7 +5,7 @@ category: 로봇 시뮬레이션 및 내비게이션
 tags: [ROS, Gazebo, SLAM, Navigation, AgileX, LIMO, 로봇 모델링]
 ---
 
-# 「고대_빅데이터사물인터넷 과정」 로봇 시뮬레이션 및 내비게이션 강의 계획서
+# 「고대_Limo ros 과정」 로봇 시뮬레이션 및 내비게이션 강의 계획서
 
 ## 회차별 강의 계획
 

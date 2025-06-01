@@ -61,7 +61,8 @@
   - turtlebot3_cartographer 패키지 설치
 - 5교시
   - map_server 패키지 설치(nav2)
-  - 지도 그리기 실습
+  - 지도 그리기 실습 - map.pgm, map.yaml 파일 생성
+  - SLAM 파인 튜닝 방법 lua 변경 및 옵션 찾기 - thread, resolution, imu 설정
 - 6교시
   - OccupancyGrid 메시지 이해
   - rviz2에서 OccupancyGrid 메시지 시각화
