@@ -1,4 +1,8 @@
 # sudo apt install ros-humble-tf-transformations
+# ros2 run turtlesim turtlesim_node
+# ros2 run hello_ros2 follow_turtlesim
+# rviz2 -> tf 확인
+# ros2 run turtlesim turtle_teleop_key
 
 import rclpy
 from geometry_msgs.msg import TransformStamped, Twist
@@ -10,8 +14,6 @@ from tf2_ros.transform_listener import TransformListener
 from tf_transformations import euler_from_quaternion, quaternion_from_euler
 from turtlesim.msg import Pose
 from turtlesim.srv import Spawn
-
-# from tf2_ros import TransformException
 
 
 class Follow_turtle(Node):
