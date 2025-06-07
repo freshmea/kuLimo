@@ -148,6 +148,7 @@ alias killgazebo='pkill -9 gzserver; pkill -9 gzclient; pkill -9 gzweb; pkill -9
 ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=true
 ros2 run turtlebot3_teleop teleop_keyboard
+cd ~/kuLimo
 ros2 run nav2_map_server map_saver_cli -f map
 
 ```
