@@ -76,6 +76,7 @@ class Action_client(Node):
     def feedback_callback(self, msg):
         feedback: FollowWaypoints.Feedback = msg.feedback
         self.get_logger().info(f" 지금까지 처리 결과 seq{feedback.current_waypoint}")
+        self.get_logger().info(f" patrol index{self.patrol_index}")
 
     # result 를 처리하는 콜백 함수
     def done_callback(self, future: Future):
