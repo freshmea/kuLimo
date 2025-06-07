@@ -118,22 +118,15 @@ alias killgazebo='pkill -9 gzserver; pkill -9 gzclient; pkill -9 gzweb; pkill -9
 
 - 1교시
   - 복습
-  - 슬램 개념 학습
+  - Navigation2 개념 학습
 - 2교시
-  - gazebo 시뮬레이션 설정 - 복습
-    - turtlebot3_simulation 패키지 설치
-    - limo_ros2 패키지 설치
-    - gazebo 설치
+  - 지도 그리기 실습 - nav2 를 위한 지도 저장
 - 3교시
-  - turtlebot3 패키지 설치
-  - turtlebot3_gazebo 실습
+  - nav2 실행 - rviz2 에서 실습
 - 4교시
-  - cartographer 패키지 설치
-  - turtlebot3_cartographer 패키지 설치
+  - follow_waypoints 노드 작성
 - 5교시
-  - map_server 패키지 설치(nav2)
-  - 지도 그리기 실습 - map.pgm, map.yaml 파일 생성
-  - SLAM 파인 튜닝 방법 lua 변경 및 옵션 찾기 - thread, resolution, imu 설정
+  -
 - 6교시
   - OccupancyGrid 메시지 이해
   - rviz2에서 OccupancyGrid 메시지 시각화
