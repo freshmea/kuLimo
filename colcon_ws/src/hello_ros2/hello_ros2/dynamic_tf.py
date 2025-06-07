@@ -34,14 +34,16 @@ class DynamicFramePublisher(Node):
         t2.transform.translation.x = 3.0
         t2.transform.translation.y = 0.0
         t2.transform.translation.z = 0.0
-        t.transform.rotation.x = 0.0
-        t.transform.rotation.y = 0.0
-        t.transform.rotation.z = 0.0
-        t.transform.rotation.w = 1.0
+        t2.transform.rotation.x = 0.0
+        t2.transform.rotation.y = 0.0
+        t2.transform.rotation.z = 0.0
+        t2.transform.rotation.w = 1.0
 
         self.t += 1 / 60
+        print(self.t)
 
         self.tf_br.sendTransform(t)
+        self.tf_br.sendTransform(t2)
 
 
 def main():
