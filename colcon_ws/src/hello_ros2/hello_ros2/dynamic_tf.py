@@ -1,3 +1,5 @@
+# sudo apt install ros-humble-tf-transformations
+
 import rclpy
 import rclpy.logging
 from geometry_msgs.msg import TransformStamped
