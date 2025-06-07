@@ -151,4 +151,10 @@ ros2 run turtlebot3_teleop teleop_keyboard
 cd ~/kuLimo
 ros2 run nav2_map_server map_saver_cli -f map
 
+# Nav2 실행
+# cartographer 는 종료한다.
+ros2 launch turtlebot3_navigation2 navigation2.launch.py use_sim_time:=True map:=/home/kuLimo/map.yaml
+# 2d pose estimate 실행
+# nav2 goal 실행 -> 움직임 확인
+# nav2 goal 실행 후 path 가 정해진다음 이동 경로에 장애물 설치 실습
 ```
