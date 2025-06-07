@@ -109,3 +109,45 @@ alias killgazebo='pkill -9 gzserver; pkill -9 gzclient; pkill -9 gzweb; pkill -9
 # 운용 -> 텔레옵 움직여서 지도가 그려지는것 rviz2 창에서 확인!.
 
 ```
+
+---
+
+## 2025-06-07
+
+---
+
+- 1교시
+  - 복습
+  - 슬램 개념 학습
+- 2교시
+  - gazebo 시뮬레이션 설정 - 복습
+    - turtlebot3_simulation 패키지 설치
+    - limo_ros2 패키지 설치
+    - gazebo 설치
+- 3교시
+  - turtlebot3 패키지 설치
+  - turtlebot3_gazebo 실습
+- 4교시
+  - cartographer 패키지 설치
+  - turtlebot3_cartographer 패키지 설치
+- 5교시
+  - map_server 패키지 설치(nav2)
+  - 지도 그리기 실습 - map.pgm, map.yaml 파일 생성
+  - SLAM 파인 튜닝 방법 lua 변경 및 옵션 찾기 - thread, resolution, imu 설정
+- 6교시
+  - OccupancyGrid 메시지 이해
+  - rviz2에서 OccupancyGrid 메시지 시각화
+- 7교시
+  - publish_map 노드 작성
+- 8교시
+  - scan 메시지 이해
+  - scan 메시지와 map 메시지 연결 노드 작성
+
+```bash
+# SLAM 지도 그리기
+ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=true
+ros2 run turtlebot3_teleop teleop_keyboard
+ros2 run nav2_map_server map_saver_cli -f map
+
+```
