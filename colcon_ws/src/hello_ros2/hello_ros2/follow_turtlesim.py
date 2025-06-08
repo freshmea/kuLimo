@@ -29,7 +29,6 @@ class Follow_turtle(Node):
         request.x = 3.0
         request.y = 3.0
         request.theta = 0.0
-        self.msg = Pose()
         self.result = self.spawner.call_async(request)
         self.result.add_done_callback(self.spawn_cb)
         self.tf_br = TransformBroadcaster(self)
@@ -63,7 +62,6 @@ class Follow_turtle(Node):
         self.tf_br.sendTransform(t)
 
     def sub_cb2(self, msg: Pose):
-        self.msg = msg
         t = TransformStamped()
         t.header.stamp = self.get_clock().now().to_msg()
         t.header.frame_id = "world"
@@ -97,7 +95,7 @@ class Follow_turtle(Node):
         )
 
         # 회전 제어 로직
-        angular_speed = 2.0
+        angular_speed = 4.0
         angle_threshold = 0.1  # 라디안 (약 5.7도)
 
         if angle_error_rad > angle_threshold:
@@ -113,7 +111,7 @@ class Follow_turtle(Node):
         )
 
         if distance_squared > 0.2:  # 임계값은 필요에 따라 조정
-            msg.linear.x = 3.0
+            msg.linear.x = 2.0
         else:
             msg.linear.x = 0.0  # 목표 근처에 도달하면 정지
 
