@@ -126,15 +126,14 @@ alias killgazebo='pkill -9 gzserver; pkill -9 gzclient; pkill -9 gzweb; pkill -9
 - 4교시
   - follow_waypoints 노드 작성
 - 5교시
-  -
+  - patrol 노드 작성 (turtlebot3 가 gazebo에서 patrol)
+  - dynamic tf 노드 작성
 - 6교시
-  - OccupancyGrid 메시지 이해
-  - rviz2에서 OccupancyGrid 메시지 시각화
+  - tf_listener 노드 작성
 - 7교시
-  - publish_map 노드 작성
+  - follow_turtlesim 노드 작성
 - 8교시
-  - scan 메시지 이해
-  - scan 메시지와 map 메시지 연결 노드 작성
+  - follow_turtlesim 노드 수정
 
 ```bash
 # SLAM 지도 그리기

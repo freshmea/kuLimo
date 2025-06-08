@@ -78,39 +78,28 @@ class Follow_turtle(Node):
 
     def on_timer(self):
         try:
-            transform_to_turtle1 = self.tf_buffer.lookup_transform(
-                "turtle2", "turtle1", time.Time()
-            )
+            t = self.tf_buffer.lookup_transform("turtle2", "turtle1", time.Time())
         except Exception as e:
-            self.get_logger().info(f"Lookup transform failed: {e}")
+            self.get_logger().info(f"Lookup transform 실패!!: {e}")
             return
 
         msg = Twist()
-        msg.angular.x = 0.0
-        msg.angular.y = 0.0
-
         angle_error_rad = math.atan2(
-            transform_to_turtle1.transform.translation.y,
-            transform_to_turtle1.transform.translation.x,
+            t.transform.translation.y,
+            t.transform.translation.x,
         )
 
         # 회전 제어 로직
-        angular_speed = 4.0
-        angle_threshold = 0.1  # 라디안 (약 5.7도)
-
-        if angle_error_rad > angle_threshold:
-            msg.angular.z = angular_speed  # 반시계 방향 회전
-        elif angle_error_rad < -angle_threshold:
-            msg.angular.z = -angular_speed  # 시계 방향 회전
+        if angle_error_rad > 0.1:
+            msg.angular.z = 4.0  # 반시계 방향 회전
+        elif angle_error_rad < -0.1:
+            msg.angular.z = -4.0  # 시계 방향 회전
         else:
             msg.angular.z = 0.0  # 목표 방향
 
-        distance_squared = (
-            transform_to_turtle1.transform.translation.x**2
-            + transform_to_turtle1.transform.translation.y**2
-        )
-
-        if distance_squared > 0.2:  # 임계값은 필요에 따라 조정
+        if (
+            t.transform.translation.x**2 + t.transform.translation.y**2 > 0.2
+        ):  # 임계값은 필요에 따라 조정
             msg.linear.x = 2.0
         else:
             msg.linear.x = 0.0  # 목표 근처에 도달하면 정지
