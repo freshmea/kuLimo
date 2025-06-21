@@ -52,3 +52,23 @@ source ~/.bashrc
 ```bash
 rosdep install --from-paths src --ignore-src -r -y
 ```
+
+## 4. LIMO 기본 작동 테스트
+
+### 4.1 시뮬레이션 실행
+
+```bash
+# roscore uri 설정
+export ROS_MASTER_URI=http://localhost:11311
+export ROS_IP=$(hostname -I | awk '{print $1}')
+# Gazebo 시뮬레이션 실행
+roslaunch limo_gazebo_sim limo_four_diff.launch 
+roslaunch limo_gazebo_sim limo_four_diff.launch world_name:=$(find limo_gazebo_sim)/worlds/empty.world
+```
+
+### 4.2 실제 로봇 구동 - 실제 로봇 ssh에서 실행
+
+```bash
+# LIMO 로봇 기본 드라이버 실행
+roslaunch limo_bringup limo_start.launch
+```
