@@ -69,15 +69,19 @@ chmod 700 /run/user/$(id -u)
 
 ---
 
-# KU LIMO 로봇 세팅 가이드
+```limo bashrc
+#Limo versions:Emmc_v1
+source /opt/ros/melodic/setup.bash
+source ~/wego_ws/devel/setup.bash
+alias nb='sudo nano ~/.bashrc'
+alias sb='source ~/.bashrc'
+alias cm='cd ~/wego_ws && catkin_make'
 
-이 저장소는 LIMO 로봇의 설치 및 구성 방법에 대한 안내를 제공합니다.
+export PATH=/usr/local/cuda-10.2/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64:$LD_LIBRARY_PATH
+rosclean purge -y
 
-## 목차
-1. 하드웨어 설정
-2. ROS 설치
-3. LIMO 패키지 설치
-4. 기본 작동 테스트
-5. 문제 해결
-
-각 단계별 상세 설명은 해당 섹션을 참조하세요.
+export ROS_MASTER_URL=http://192.168.1.16:11311
+export ROS_IP=192.168.1.16
+export LD_LIBRARY_PATH=/usr/lib/aarch64-linux-gnu:$LD_LIBRARY_PATH
+```
