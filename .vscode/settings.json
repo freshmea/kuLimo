@@ -1,5 +1,5 @@
 {
-    "ros.distro": "humble",
+    "ros.distro": "noetic",
     "github.copilot.enable": {
         "*": true,
         "plaintext": true,

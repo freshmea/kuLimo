@@ -17,8 +17,14 @@ sudo rm ros-latest.list.save
 
 # ROS 저장소 추가
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
 sudo apt update
 sudo apt upgrade
+
+# domain server 설정
+sudo nano /etc/resolv.conf
+# nameserver 8.8.8.8 수정
+sudo apt update && sudo apt upgrade
 
 ```
 
@@ -62,7 +68,7 @@ rosdep install --from-paths src --ignore-src -r -y
 export ROS_MASTER_URI=http://localhost:11311
 export ROS_IP=$(hostname -I | awk '{print $1}')
 # Gazebo 시뮬레이션 실행
-roslaunch limo_gazebo_sim limo_four_diff.launch 
+roslaunch limo_gazebo_sim limo_four_diff.launch
 roslaunch limo_gazebo_sim limo_four_diff.launch world_name:=$(find limo_gazebo_sim)/worlds/empty.world
 ```
 
