@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
 
-<robot name="limo_ackerman" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="limo_ackerman"
+    xmlns:xacro="http://ros.org/wiki/xacro">
 
-    <xacro:arg name="robot_namespace" default="/" />
+    <xacro:arg name="robot_namespace" default="limo" />
     <xacro:include filename="$(find limo_description)/urdf/limo_xacro.xacro" />
     <xacro:include filename="$(find limo_description)/urdf/limo_steering_hinge.xacro" />
     <xacro:include filename="$(find limo_description)/urdf/limo_ackerman.gazebo" />
@@ -25,9 +26,9 @@
     <link name="base_footprint"/>
 
     <joint name="base_joint" type="fixed">
-    <parent link="base_footprint"/>
-    <child link="base_link"/>
-    <origin xyz="0.0 0.0 0.15" rpy="0 0 0"/>
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <origin xyz="0.0 0.0 0.15" rpy="0 0 0"/>
     </joint>
     <!-- Base link -->
     <link name="base_link">
@@ -39,9 +40,9 @@
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
-          <geometry>
-              <box size="${base_x_size} ${base_y_size} ${base_z_size}"/>
-          </geometry>
+            <geometry>
+                <box size="${base_x_size} ${base_y_size} ${base_z_size}"/>
+            </geometry>
         </collision>
     </link>
 
@@ -49,9 +50,7 @@
         <inertial>
             <origin xyz="0.0 0.0 0.0" />
             <mass value="${base_mass}" />
-            <inertia ixx="0.24" ixy="0" ixz="0" 
-                     iyy="0.96" iyz="0" 
-                     izz="0.96" />
+            <inertia ixx="0.24" ixy="0" ixz="0" iyy="0.96" iyz="0" izz="0.96" />
         </inertial>
     </link>
 
@@ -72,7 +71,7 @@
     <xacro:limo_imu parent_prefix="base_link" frame_prefix="imu">
         <origin xyz="0.0 0 -0.1" rpy="0 0 0"/>
     </xacro:limo_imu>
-    
+
     <xacro:limo_left_steering_hinge parent_prefix="base_link" wheel_prefix="left_steering_hinge">
         <origin xyz="${wheelbase/2} ${track/2} ${wheel_vertical_offset}" rpy="0 0  0" />
     </xacro:limo_left_steering_hinge>
@@ -86,7 +85,7 @@
         <inertial>
             <origin xyz="0 0 0" />
             <mass value="0.5" />
-            <inertia ixx="0.01055" ixy="0" ixz="0" iyy="0.00075" iyz="0" izz="0.01055" /> 
+            <inertia ixx="0.01055" ixy="0" ixz="0" iyy="0.00075" iyz="0" izz="0.01055" />
         </inertial>
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
@@ -96,9 +95,9 @@
         </visual>
         <collision>
             <origin xyz="0 ${wheel_length/2} 0" rpy="1.57 0 0" />
-          <geometry>
-              <cylinder length="${wheel_length}" radius="${wheel_radius}" />
-          </geometry>
+            <geometry>
+                <cylinder length="${wheel_length}" radius="${wheel_radius}" />
+            </geometry>
         </collision>
     </link>
     <joint name="rear_left_wheel" type="continuous">
@@ -112,7 +111,7 @@
         <inertial>
             <origin xyz="0 0 0" />
             <mass value="0.5" />
-            <inertia ixx="0.01055" ixy="0" ixz="0" iyy="0.00075" iyz="0" izz="0.01055" /> 
+            <inertia ixx="0.01055" ixy="0" ixz="0" iyy="0.00075" iyz="0" izz="0.01055" />
         </inertial>
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
@@ -120,18 +119,18 @@
                 <mesh filename="package://limo_description/meshes/limo_wheel.dae" />
             </geometry>
         </visual>
-            <collision>
-                <origin xyz="0 ${wheel_length/2} 0" rpy="1.57 0 0" />
-              <geometry>
-                  <cylinder length="${wheel_length}" radius="${wheel_radius}" />
-              </geometry>
-            </collision>
-        </link>
+        <collision>
+            <origin xyz="0 ${wheel_length/2} 0" rpy="1.57 0 0" />
+            <geometry>
+                <cylinder length="${wheel_length}" radius="${wheel_radius}" />
+            </geometry>
+        </collision>
+    </link>
 
-        <joint name="rear_right_wheel" type="continuous">
-            <parent link="base_link"/>
-            <child link="rear_right_wheel_link"/>
-            <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="${M_PI} 0 0" />
-            <axis xyz="0 -1 0"/>
-        </joint>
+    <joint name="rear_right_wheel" type="continuous">
+        <parent link="base_link"/>
+        <child link="rear_right_wheel_link"/>
+        <origin xyz="${-wheelbase/2} ${-track/2} ${wheel_vertical_offset}" rpy="${M_PI} 0 0" />
+        <axis xyz="0 -1 0"/>
+    </joint>
 </robot>
