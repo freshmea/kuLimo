@@ -1,0 +1,119 @@
+#!/usr/bin/env python3
+import cv2
+import numpy as np
+import rospy
+from cv_bridge import CvBridge
+from sensor_msgs.msg import CompressedImage
+from std_msgs.msg import Bool
+
+
+class CrosswalkDetector:
+    def __init__(self):
+        rospy.init_node("crosswalk_detector")
+        self.bridge = CvBridge()
+        self.img_sub = rospy.Subscriber(
+            "camera/rgb/image_raw/compressed", CompressedImage, self.imgCallback
+        )
+        self.pub = rospy.Publisher("crosswalk", Bool, queue_size=1)
+
+    def imgCallback(self, msg):
+        image = self.bridge.compressed_imgmsg_to_cv2(msg, "bgr8")
+        roi = image[350:480, 0:320]  # 아래쪽 ROI
+        gray = cv2.cvtColor(roi, cv2.COLOR_BGR2GRAY)
+        _, binary = cv2.threshold(gray, 200, 255, cv2.THRESH_BINARY)
+
+        # 횡단보도는 흰색 선이 반복적으로 나타남
+        lines = cv2.HoughLinesP(
+            binary, 1, np.pi / 180, threshold=50, minLineLength=30, maxLineGap=10
+        )
+
+        is_crosswalk = False
+        if lines is not None and len(lines) >= 5:
+            is_crosswalk = True
+
+        self.pub.publish(Bool(data=is_crosswalk))
+        cv2.imshow("crosswalk_roi", roi)
+        cv2.waitKey(3)
+
+
+if __name__ == "__main__":
+    CrosswalkDetector()
+    rospy.spin()
+
+# trafficlightdetector
+
+#!/usr/bin/env python3
+import cv2
+import numpy as np
+import rospy
+from cv_bridge import CvBridge
+from sensor_msgs.msg import CompressedImage
+from std_msgs.msg import String
+
+
+class TrafficLightDetector:
+    def __init__(self):
+        rospy.init_node("traffic_light_detector")
+        self.bridge = CvBridge()
+        self.sub = rospy.Subscriber(
+            "camera/rgb/image_raw/compressed", CompressedImage, self.callback
+        )
+        self.pub = rospy.Publisher("traffic_light", String, queue_size=1)
+
+    def callback(self, msg):
+        image = self.bridge.compressed_imgmsg_to_cv2(msg, "bgr8")
+        roi = image[100:200, 250:320]  # 신호등 위치에 따라 조정
+
+        hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
+
+        red1 = cv2.inRange(hsv, (0, 100, 100), (10, 255, 255))
+        red2 = cv2.inRange(hsv, (160, 100, 100), (179, 255, 255))
+        red_mask = red1 | red2
+        green_mask = cv2.inRange(hsv, (45, 100, 100), (75, 255, 255))
+
+        red_count = cv2.countNonZero(red_mask)
+        green_count = cv2.countNonZero(green_mask)
+
+        if red_count > 200:
+            state = "red"
+        elif green_count > 200:
+            state = "green"
+        else:
+            state = "unknown"
+
+        self.pub.publish(state)
+        cv2.imshow("traffic_light", roi)
+        cv2.waitKey(3)
+
+
+if __name__ == "__main__":
+    TrafficLightDetector()
+    rospy.spin()
+
+
+# hybrid control
+
+# 추가: init에 구독자 2개 추가
+self.crosswalk_flag = False
+self.traffic_light = "green"
+rospy.Subscriber("crosswalk", Bool, self.crosswalkCallback)
+rospy.Subscriber("traffic_light", String, self.trafficLightCallback)
+
+
+def crosswalkCallback(self, msg):
+    self.crosswalk_flag = msg.data
+
+
+def trafficLightCallback(self, msg):
+    self.traffic_light = msg.data
+
+
+# errorCallback 내에 수정 추가
+if self.crosswalk_flag:
+    cmd.linear.x = 0.1  # 감속
+    rospy.loginfo("Crosswalk detected: slowing down")
+
+if self.traffic_light == "red":
+    cmd.linear.x = 0.0
+    cmd.angular.z = 0.0
+    rospy.loginfo("Red light detected: stopping")
