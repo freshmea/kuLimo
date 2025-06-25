@@ -1,0 +1,14 @@
+material track1
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture course.png
+      }
+    }
+  }
+}
+

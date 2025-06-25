@@ -1,0 +1,14 @@
+material circletrack
+{
+  technique
+  {
+    pass
+    {
+      texture_unit
+      {
+        texture course.png
+      }
+    }
+  }
+}
+
