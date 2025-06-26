@@ -20,23 +20,12 @@
 if [[ "$TERM" == *color* ]]; then
     color_prompt=yes
 fi
---> color_prompt=yes
 # 맨 아래에 추가
 source /opt/ros/noetic/setup.bash # ros를 초기화.
 source ~/kuLimo/catkin_ws/devel/setup.bash
-source /usr/share/gazebo/setup.bash # gazebo를 초기화.
 export XDG_RUNTIME_DIR=/run/user/$(id -u)
 mkdir -p /run/user/$(id -u)
 chmod 700 /run/user/$(id -u)
-
-export ROS_MASTER_URL=http://localhost:11311
-export ROS_IP=$(hostname -I | awk '{print $1}')
-
-alias nb='sudo nano ~/.bashrc'
-alias sb='source ~/.bashrc'
-alias cm='cd ~/kuLimo/catkin_ws && catkin_make'
-alias killgazebo='kill -9 gzserver gzclient'
-
 ```
 
 ---
@@ -77,6 +66,22 @@ alias killgazebo='kill -9 gzserver gzclient'
   - xacro 파일을 이용한 로봇 모델링
   - SLAM, NAV2 패키지 사용하기
 - [과정 진행 사항](doc/simulation.md)
+
+---
+
+---
+
+## 리모 실습
+
+---
+
+- 수업 목표
+  - LIMO 로봇 시뮬레이션 환경 구축
+  - LIMO 로봇 모델 수정
+  - LIMO 기본 동작 테스트
+  - LIMO 로봇 시뮬레이션 SLAM, NAV2 패키지 사용하기
+  - LIMO application 개발 - camera 활용.
+- [과정 진행 사항](doc/limo.md)
 
 ---
 
