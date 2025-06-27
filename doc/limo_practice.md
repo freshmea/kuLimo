@@ -69,8 +69,8 @@ export ROS_MASTER_URI=http://localhost:11311
 export ROS_IP=$(hostname -I | awk '{print $1}')
 # Gazebo 시뮬레이션 실행
 roslaunch limo_gazebo_sim limo_four_diff.launch
-roslaunch limo_gazebo_sim limo_four_diff.launch world_name:=/home/sejongtp09/kuLimo/catkin_ws/src/limo_gazebo_sim/worlds/empty.world
 roslaunch limo_gazebo_sim limo_four_diff.launch world_name:=$(rospack find limo_gazebo_sim)/worlds/empty.world
+roslaunch limo_gazebo_sim limo_four_diff.launch world_name:=$(rospack find turtlebot3_gazebo)/worlds/turtlebot3_stage_1.world
 ```
 
 ### 4.2 limo URDF 변경

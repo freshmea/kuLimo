@@ -40,8 +40,27 @@ xhost +local:
 
 ## Docker container 실행
 
+- gpu 없을때.
 ```bash
 docker run -it -d --name ros1_noetic --env="DISPLAY" --env="QT_X11_NO_MITSHM=1" --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --net=host osrf/ros:noetic-desktop-full
+```
+
+- gpu 있을때.
+```bash
+docker run -it \
+  --name=linux_gui_r1 \
+  --env="DISPLAY=$DISPLAY" \
+  --env="QT_X11_NO_MITSHM=1" \
+  --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+  --volume="/usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:ro" \
+  --device=/dev/nvidia0:/dev/nvidia0 \
+  --device=/dev/nvidia-modeset:/dev/nvidia-modeset \
+  --ipc=host \
+  --net=host \
+  --runtime=nvidia \
+  --env="NVIDIA_DRIVER_CAPABILITIES=compute,graphics,utility,display" \
+  osrf/ros:noetic-desktop-full \
+  bash
 ```
 
 ## dev container 실행
