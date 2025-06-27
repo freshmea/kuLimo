@@ -4,7 +4,7 @@ import numpy as np
 import rospy
 from cv_bridge import CvBridge
 from sensor_msgs.msg import CompressedImage
-from std_msgs.msg import Bool, Int16
+from std_msgs.msg import Int16
 
 
 class LineDetect:
@@ -13,7 +13,6 @@ class LineDetect:
             "camera/rgb/image_raw/compressed", CompressedImage, self.imgCallback
         )
         self.error_pub_ = rospy.Publisher("gap", Int16, queue_size=10)
-        self.rotate_pub_ = rospy.Publisher("rotate", Bool, queue_size=10)
 
         self.br_ = CvBridge()
 
@@ -53,7 +52,6 @@ class LineDetect:
                 line_indices.append(i)
 
         if line_indices:
-            self.rotate_pub_.publish(Bool(data=False))
             # 선의 최소/최대 값으로 중심 계산
             max_v = max(line_indices)
             min_v = min(line_indices)
@@ -72,10 +70,8 @@ class LineDetect:
             cy = int(height * 0.9)  # ROI 내 중심점 y 좌표
             cv2.circle(original_image, (cx, cy), 10, (255, 0, 0), -1)
         else:
-            # 선을 찾지 못한 경우
-            self.rotate_pub_.publish(Bool(data=True))
             self.find_line = False
-            error.data = 0
+            error.data = 0  # 선을 찾지 못하면 에러 0
 
         self.error_pub_.publish(error)
 
