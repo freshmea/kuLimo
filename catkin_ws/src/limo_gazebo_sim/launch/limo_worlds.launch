@@ -30,7 +30,7 @@
               -unpause
               -urdf
               -param robot_description
-              -model 'limo$(arg robot_namespace)'" />
+              -model '$(arg robot_namespace)'" />
    
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="limo_state_controller" ns="$(arg robot_namespace)"/>
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" ns="$(arg robot_namespace)" />
