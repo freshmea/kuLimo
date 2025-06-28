@@ -31,8 +31,9 @@
               -urdf
               -param robot_description
               -model '$(arg robot_namespace)'" />
-   
-    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="limo_state_controller"/>
+    <rosparam file="$(find limo_gazebo_sim)/config/limo_four_diff_control.yaml" command="load" ns="$(arg robot_namespace)"/>
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen" args="limo_state_controller" ns="$(arg robot_namespace)"/>
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" ns="$(arg robot_namespace)" />
 
 </launch>
