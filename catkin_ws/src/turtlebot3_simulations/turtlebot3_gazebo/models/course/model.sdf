@@ -30,8 +30,8 @@
 	      <material>
           <script>
             <!--uri>file://materials/scripts/floor.material</uri-->
-            <uri>model://circle_track/materials/scripts</uri>
-            <uri>model://circle_track/materials/textures</uri>
+            <uri>model://course/materials/scripts</uri>
+            <uri>model://course/materials/textures</uri>
             <name>course</name>
           </script>
         </material>
