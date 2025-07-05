@@ -220,7 +220,7 @@ imu hz 조정
 
 ### 4.5 SLAM 실행 gmapping
 
-- 관련 패키지 설치 - map_server
+- 관련 패키지 설치 - gmapping
   - `sudo apt install ros-noetic-gmapping`
   - `sudo apt install ros-noetic-robot-pose-ekf`
   - `sudo apt install ros-noetic-map-server`

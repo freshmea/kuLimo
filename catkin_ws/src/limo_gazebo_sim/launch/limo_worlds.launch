@@ -2,9 +2,6 @@
   <!-- <env name="GAZEBO_RESOURCE_PATH" value="$(find turtlebot3_gazebo)/models/autorace/ground_picture" /> -->
   <arg name="robot_namespace" default="limo"/>
   <arg name="pub_tf" default="false" />
-  <arg name="x_pos" default="0.8"/>
-  <arg name="y_pos" default="-1.747"/>
-  <arg name="z_pos" default="0"/>  
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <!-- <arg name="world_name" value="$(find turtlebot3_gazebo)/worlds/turtlebot3_circle_track.world" /> -->
