@@ -217,3 +217,28 @@ imu hz 조정
     </node>
 </launch>
 ```
+
+### 4.5 SLAM 실행 gmapping
+
+- 관련 패키지 설치 - map_server
+  - `sudo apt install ros-noetic-gmapping`
+  - `sudo apt install ros-noetic-robot-pose-ekf`
+  - `sudo apt install ros-noetic-map-server`
+
+- teleop_twist_keyboard 실행
+  - `roslaunch limo_gazebo_sim teleop_keyboard_simul.launch`
+
+- map 저장
+  - `roscd limo_bringup/maps`
+  - `rosrun map_server map_saver -f ~/map`
+
+### 4.6 navigation 실행
+
+- 관련 패키지 설치 - [move_base/move_base] - [amcl/amcl]
+  - `sudo apt install ros-noetic-navigation`
+  - `sudo apt install ros-noetic-global-planner`
+  - `sudo apt install ros-noetic-move-base`
+  - `sudo apt install ros-noetic-amcl`
+
+- navigation launch 실행
+  - 
