@@ -237,9 +237,10 @@ imu hz 조정
 
 - 관련 패키지 설치 - [move_base/move_base] - [amcl/amcl]
   - `sudo apt install ros-noetic-navigation`
-  - `sudo apt install ros-noetic-global-planner`
-  - `sudo apt install ros-noetic-move-base`
-  - `sudo apt install ros-noetic-amcl`
+    - `sudo apt install ros-noetic-global-planner`
+    - `sudo apt install ros-noetic-move-base`
+    - `sudo apt install ros-noetic-amcl`
 
-- navigation launch 실행
-  - 
+- navigation launch 실행\
+  - `roslaunch limo_bringup limo_navigation_simul.launch`
+  - `rosrun hello_ros patrol_limo `
