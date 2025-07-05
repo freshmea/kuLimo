@@ -227,7 +227,7 @@ imu hz 조정
 
 - teleop_twist_keyboard 실행
   - `roslaunch limo_bringup limo_gmapping_simul.launch `
-  - `roslaunch limo_gazebo_sim teleop_keyboard_simul.launch`
+  - `roslaunch limo_bringup limo_teletop_keyboard_simul.launch `
 
 - map 저장
   - `roscd limo_bringup/maps`
