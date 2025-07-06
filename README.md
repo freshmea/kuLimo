@@ -14,29 +14,6 @@
 - vscode deb 파일
 [링크](https://drive.google.com/file/d/1We4ILpw1NTzpspkflSpvdZikvyApTxn0/view?usp=sharing)
 
-
-```bash
-# 31번 라인
-if [[ "$TERM" == *color* ]]; then
-    color_prompt=yes
-fi
-# 맨 아래에 추가
-source /opt/ros/noetic/setup.bash # ros를 초기화.
-source ~/kuLimo/catkin_ws/devel/setup.bash
-source /usr/share/gazebo/setup.bash # gazebo를 초기화.
-export XDG_RUNTIME_DIR=/run/user/$(id -u)
-mkdir -p /run/user/$(id -u)
-chmod 700 /run/user/$(id -u)
-
-export ROS_MASTER_URL=http://localhost:11311
-export ROS_IP=$(hostname -I | awk '{print $1}')
-
-alias nb='sudo nano ~/.bashrc'
-alias sb='source ~/.bashrc'
-alias cm='cd ~/kuLimo/catkin_ws && catkin_make'
-alias killgazebo='pkill -9 gzserver; pkill -9 gzclient; pkill -9 gzweb; pkill -9 gzbridge'
-```
-
 ---
 
 ## 파이썬 수업
@@ -94,7 +71,33 @@ alias killgazebo='pkill -9 gzserver; pkill -9 gzclient; pkill -9 gzweb; pkill -9
 
 ---
 
-```limo bashrc
+- 노트북 bashrc 세팅
+
+```bash
+# 31번 라인
+if [[ "$TERM" == *color* ]]; then
+    color_prompt=yes
+fi
+# 맨 아래에 추가
+source /opt/ros/noetic/setup.bash # ros를 초기화.
+source ~/kuLimo/catkin_ws/devel/setup.bash
+source /usr/share/gazebo/setup.bash # gazebo를 초기화.
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
+mkdir -p /run/user/$(id -u)
+chmod 700 /run/user/$(id -u)
+
+export ROS_MASTER_URL=http://localhost:11311
+export ROS_IP=$(hostname -I | awk '{print $1}')
+
+alias nb='sudo nano ~/.bashrc'
+alias sb='source ~/.bashrc'
+alias cm='cd ~/kuLimo/catkin_ws && catkin_make'
+alias killgazebo='pkill -9 gzserver; pkill -9 gzclient; pkill -9 gzweb; pkill -9 gzbridge'
+```
+
+- LIMO bashrc 세팅
+
+```bash
 #Limo versions:Emmc_v1
 source /opt/ros/melodic/setup.bash
 source ~/wego_ws/devel/setup.bash
