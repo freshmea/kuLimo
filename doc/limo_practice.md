@@ -226,8 +226,8 @@ imu hz 조정
   - `sudo apt install ros-noetic-map-server`
 
 - teleop_twist_keyboard 실행
-  - `roslaunch limo_bringup limo_gmapping_simul.launch `
-  - `roslaunch limo_bringup limo_teletop_keyboard_simul.launch `
+  - `roslaunch limo_bringup limo_gmapping_simul.launch`
+  - `roslaunch limo_bringup limo_teletop_keyboard_simul.launch`
 
 - map 저장
   - `roscd limo_bringup/maps`
@@ -243,4 +243,4 @@ imu hz 조정
 
 - navigation launch 실행\
   - `roslaunch limo_bringup limo_navigation_simul.launch`
-  - `rosrun hello_ros patrol_limo `
+  - `rosrun hello_ros patrol_limo`

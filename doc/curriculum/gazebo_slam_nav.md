@@ -1,11 +1,9 @@
 ---
-title: 고대_Limo ros2 과정 강의 계획서
+title: 「고대_Limo ros2 과정」 로봇 시뮬레이션 및 내비게이션 강의 계획서
 date: 2025-05-24
 category: 로봇 시뮬레이션 및 내비게이션
 tags: [ROS2, Humble, Gazebo, SLAM, Navigation2, AgileX, LIMO, 로봇 모델링, URDF, Xacro, Cartographer]
 ---
-
-# 「고대_Limo ros2 과정」 로봇 시뮬레이션 및 내비게이션 강의 계획서
 
 ## 회차별 강의 계획
 
@@ -66,7 +64,7 @@ tags: [ROS2, Humble, Gazebo, SLAM, Navigation2, AgileX, LIMO, 로봇 모델링, 
 ## 참고 자료
 
 - AgileX Robotics LIMO 사용자 매뉴얼 (ROS2 버전 확인)
-- ROS2 공식 문서 (https://docs.ros.org/en/humble/)
-- Gazebo 튜토리얼 (http://gazebosim.org/tutorials)
-- Navigation2 공식 문서 (https://navigation.ros.org/)
-- Cartographer ROS 문서 (https://google-cartographer-ros.readthedocs.io/)
+- [ROS2 공식 문서](https://docs.ros.org/en/humble/)
+- [Gazebo 튜토리얼](http://gazebosim.org/tutorials)
+- [Navigation2 공식 문서](https://navigation.ros.org/)
+- [Cartographer ROS 문서](https://google-cartographer-ros.readthedocs.io/)

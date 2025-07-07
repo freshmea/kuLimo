@@ -1,11 +1,9 @@
 ---
-title: 고대_빅데이터사물인터넷 과정 강의 계획서
+title:  「고대_Limo ros 과정」 Python 강의 계획서
 date: 2025-03-15
 category: 파이썬 프로그래밍
 tags: [Python, 프로그래밍, 기초, 자료구조, 클래스, 객체지향]
 ---
-
-# 「고대_Limo ros 과정」 Python 강의 계획서
 
 ## 회차별 강의 계획
 

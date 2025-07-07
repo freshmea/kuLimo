@@ -1,11 +1,9 @@
 ---
-title: 고대_빅데이터사물인터넷 과정 강의 계획서
+title:  「고대_Limo ros 과정」 ROS 강의 계획서
 date: 2025-04-12
 category: ROS 프로그래밍
 tags: [ROS, 로봇 프로그래밍, Docker, 로봇 운영체제, ROS1, ROS2]
 ---
-
-# 「고대_Limo ros 과정」 ROS 강의 계획서
 
 ## 회차별 강의 계획
 
