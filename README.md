@@ -8,6 +8,9 @@
   - 3조: 손건희, 최근호, 김지숙, 이승원
   - 4조: 윤형정, 최용규, 이한솔, 맹진수, 정용태
 
+- 구글슬라이드 링크
+  - [링크](https://docs.google.com/presentation/d/17cGrGaiJ5c-mRxx9dpXn4djH_mYeKLga38XjvzCEVSg/edit?usp=sharing)
+
 - Vmware player 파일 다운로드
 [링크](https://drive.google.com/file/d/1twlHYAgrWeLSQRO_vHy68lJxr-n1qIWl/view?usp=sharing)
 
