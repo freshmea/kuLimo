@@ -69,18 +69,19 @@
   - limo_gazebo_sim urdf 수정 - namespace 적용. limo
 - 4교시
   - [실습] limo_gazebo_sim 실행
-  - limo_bringup 패키지의 limo_teleop 실행으로 조작하기
+  - (시뮬레이션) limo_bringup 패키지의 limo_teleop 실행으로 조작하기
+    - limo_teleop_keyboard_simul.launch 파일 작성 - namespace 적용
 - 5교시
   - limo_gazebo_sim 패키지의 launch 파일 분석
-  - world 파일 분석 및 수정 - gazebo fuel 에서 모델 가져와서 적용하기
 - 6교시
   - turtlebot3_gazebo 패키지에서 월드 파일 및 모델 파일 가져오기
-  - limo_application 패키지 수정 - gazebo 에서 동작하도록 수정
+  - [실습] 바닥 그림을 원하는 이미지로 변경하기
+  - world 파일 분석 및 수정 - gazebo fuel 에서 모델 가져와서 적용하기
 - 7교시
+  - limo_application 패키지 수정 - gazebo 에서 동작하도록 수정
   - 수정된 코드를 이용해서 실제 LIMO 로봇에서 동작 테스트
 - 8교시
-  - navigation 으로 LIMO gazebo 시뮬레이션 실행
-  - [실습] LIMO gazebo 시뮬레이션 실행 - navigation 으로 patrol
+  - [실습] LIMO 로봇에서 gazebo 시뮬레이션 실행
 
 ---
 
@@ -90,18 +91,25 @@
 
 - 1교시
   - 복습
-  - a
+  - limo SLAM 패키지 설치
+  - limo NAV2 패키지 설치
 - 2교시
-  - a
+  - willow_garage_world 월드 파일 gazebo 에서 실행
+  - teleop_twist_keyboard 패키지로 LIMO 조작
 - 3교시
-  - a
+  - simulation 환경에서 LIMO SLAM 실행
+    - limo_gmapping_simul.launch 파일 작성
+  - 지도 저장
 - 4교시
-  - a
+  - [실습] LIMO SLAM 으로 교육장 지도 만들기
 - 5교시
-  - a
+  - limo_navigation 패키지 설명
+  - limo_navigation 패키지 실행
+    - limo_navigation_simul.launch 파일 작성
 - 6교시
-  - a
+  - navigation 으로 LIMO gazebo 시뮬레이션 실행
+  - hello_ros 패키지에 patrol_limo.py 노드 작성
 - 7교시
-  - a
+  - [실습] hello_ros 패키지에 patrol_limo.py - 시뮬레이션
 - 8교시
-  - a
+  - [실습] 실제 기체에 patrol_limo.py 노드 실행
